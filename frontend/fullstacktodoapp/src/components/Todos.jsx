@@ -10,7 +10,7 @@ const Todos = () => {
     const [status , setStatus] = useState(false)
 
     const getData = async ()=>{
-      await axios.get(`https://cute-ruby-monkey-wig.cyclic.app/todos/todos`)
+      await axios.get(`https://easy-teal-colt.cyclic.app/todos/todos`)
       .then((res)=>{
          setTodo(res.data)
       })
@@ -24,7 +24,7 @@ const Todos = () => {
     // console.log(todo)
     const handleClick = async () =>{
         
-       await axios.post(`http://localhost:4500/todos/create`,{
+       await axios.post(`https://easy-teal-colt.cyclic.app/todos/create`,{
           title:title,
           desc:desc,
           status:false
@@ -33,7 +33,7 @@ const Todos = () => {
        getData();
     }
     const handleDelete=async(id)=>{
-       await axios.delete(`http://localhost:4500/todos/delete/${id}`);
+       await axios.delete(`https://easy-teal-colt.cyclic.app/todos/delete/${id}`);
        getData();
     }
     const handleUpdate=async(id)=>{
@@ -42,7 +42,7 @@ const Todos = () => {
       }else{
         setStatus(true)
       }
-      await axios.patch(`http://localhost:4500/todos/update/${id}` ,{
+      await axios.patch(`https://easy-teal-colt.cyclic.app/todos/update/${id}` ,{
         status : status
       });
       getData();
